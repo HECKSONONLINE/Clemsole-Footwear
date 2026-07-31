@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Clemsole Footwear | Quality Footwear in Zambia</title>
+
+<style>
+
+    /* =========================
+       BASE STYLES
+    ========================== */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f7f7f7;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+    header {
+        background-color: #111;
+        color: white;
+        padding: 10px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* BIGGER AND CLEARER LOGO */
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-container img {
+        height: 90px;
+        width: auto;
+        max-width: 230px;
+        object-fit: contain;
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 22px;
+        align-items: center;
+    }
+
+    nav a {
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #e63946;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+    #hero {
+        min-height: 78vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+        color: white;
+
+        background:
+            linear-gradient(
+                rgba(0, 0, 0, 0.60),
+                rgba(0, 0, 0, 0.75)
+            ),
+            url("file:///C:/Users/HecksonChamutanga/Desktop/CLEM/IMG-20260719-WA0099.jpg")
+            center/cover no-repeat;
+    }
+
+    .hero-content {
+        max-width: 950px;
+        padding: 40px;
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.50);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.2rem, 5vw, 4.3rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .hero-content .headline {
+        font-size: clamp(1.1rem, 2.3vw, 1.55rem);
+        max-width: 800px;
+        margin: auto;
+        font-weight: 500;
+    }
+
+    .hero-content .tagline {
+        margin-top: 18px;
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+
+    .hero-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 14px 25px;
+        border-radius: 7px;
+        font-weight: 700;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #e63946;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #bd202c;
+        transform: translateY(-2px);
+    }
+
+    .btn-outline {
+        color: white;
+        border: 2px solid white;
+    }
+
+    .btn-outline:hover {
+        background-color: white;
+        color: #111;
+    }
+
+    /* CLICKABLE WHATSAPP BUTTON */
+    .btn-whatsapp {
+        background-color: #25D366;
+        color: white;
+    }
+
+    .btn-whatsapp:hover {
+        background-color: #1da851;
+        transform: translateY(-2px);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+    main {
+        max-width: 1250px;
+        margin: auto;
+        padding: 65px 20px;
+    }
+
+    section {
+        scroll-margin-top: 110px;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #111;
+        margin-bottom: 15px;
+    }
+
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 65px;
+        height: 4px;
+        background-color: #e63946;
+        margin: 10px auto;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto 35px;
+        color: #666;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    /* ALL PRODUCT IMAGES HAVE THE SAME SIZE */
+    .card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .card-body {
+        padding: 20px;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .card h3 {
+        color: #111;
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+    }
+
+    .card p {
+        color: #666;
+    }
+
+    /* =========================
+       PRODUCT INFORMATION
+    ========================== */
+    .product-info {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+    }
+
+    .info-box {
+        background-color: #111;
+        color: white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .info-box h3 {
+        color: #e63946;
+        margin-bottom: 10px;
+    }
+
+    .info-box a {
+        color: white;
+        font-weight: bold;
+    }
+
+    /* =========================
+       GOAL AND MISSION
+    ========================== */
+    #about {
+        margin-top: 70px;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .about-card {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        border-top: 5px solid #e63946;
+    }
+
+    .about-card h3 {
+        font-size: 1.5rem;
+        color: #111;
+        margin-bottom: 15px;
+    }
+
+    /* =========================
+       TERMS
+    ========================== */
+    #terms {
+        margin-top: 70px;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .terms-list {
+        padding-left: 25px;
+    }
+
+    .terms-list li {
+        margin-bottom: 18px;
+    }
+
+    .terms-sublist {
+        padding-left: 20px;
+        margin-top: 7px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+    #contact {
+        margin-top: 70px;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    .contact-card {
+        background: white;
+        padding: 28px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-card h3 {
+        color: #111;
+        margin-bottom: 10px;
+    }
+
+    .contact-card a {
+        color: #e63946;
+        font-weight: 700;
+        word-break: break-word;
+    }
+
+    .contact-card a:hover {
+        text-decoration: underline;
+    }
+
+    /* WHATSAPP CONTACT LINK */
+    .whatsapp-contact-link {
+        display: inline-block;
+        background-color: #25D366;
+        color: white !important;
+        padding: 12px 20px;
+        border-radius: 7px;
+        margin-top: 5px;
+    }
+
+    .whatsapp-contact-link:hover {
+        background-color: #1da851;
+        text-decoration: none !important;
+    }
+
+    /* =========================
+       FLOATING WHATSAPP BUTTON
+    ========================== */
+    .floating-whatsapp {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 62px;
+        height: 62px;
+        background-color: #25D366;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: bold;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.30);
+        z-index: 2000;
+        transition: 0.3s;
+    }
+
+    .floating-whatsapp:hover {
+        transform: scale(1.12);
+        background-color: #1da851;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer {
+        background-color: #111;
+        color: white;
+        padding: 35px 20px;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    footer p {
+        margin: 7px 0;
+    }
+
+    /* =========================
+       MOBILE RESPONSIVENESS
+    ========================== */
+    @media (max-width: 760px) {
+
+        header {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .logo-container img {
+            height: 70px;
+            max-width: 200px;
+        }
+
+        nav ul {
+            gap: 13px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+        }
+
+        .hero-content {
+            padding: 28px 18px;
+        }
+
+        .card img {
+            height: 240px;
+        }
+
+        #terms {
+            padding: 25px 20px;
+        }
+
+        .floating-whatsapp {
+            width: 55px;
+            height: 55px;
+            right: 15px;
+            bottom: 15px;
+            font-size: 25px;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- HEADER -->
+<header>
+
+    <div class="logo-container">
+        <img
+            src="file:///C:/Users/HecksonChamutanga/Desktop/CLEM/Logo.png"
+            alt="Clemsole Footwear Logo"
+        >
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- HOME -->
+<section id="hero">
+
+    <div class="hero-content">
+
+        <h1>Clemsole Footwear</h1>
+
+        <p class="headline">
+            Quality school shoes, comfortable slippers for men and women,
+            and durable footwear proudly Zambian.
+        </p>
+
+        <p class="tagline">
+            Step with confidence. Step with Clemsole.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="btn btn-primary">
+                Shop Now
+            </a>
+
+            <a href="tel:+260961495456" class="btn btn-outline">
+                Call 0961 495 456
+            </a>
+
+            <a
+                href="https://wa.me/260961495456?text=Hello%20Clemsole%20Footwear%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                target="_blank"
+                rel="noopener"
+                class="btn btn-whatsapp"
+            >
+                WhatsApp Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<main>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+
+        <h2 class="section-title">Our Products</h2>
+
+        <p class="section-intro">
+            Explore our quality, comfortable and durable footwear
+            for school, work and everyday use.
+        </p>
+
+        <div class="product-grid">
+
+            <div class="card">
+                <img src="file:///C:/Users/HecksonChamutanga/Desktop/CLEM/IMG-20260719-WA0133.jpg" alt="Clemsole Product 1">
+                <div class="card-body">
+                    <h3>Product 1</h3>
+                    <p>Comfortable Sneakers</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="file:///C:/Users/HecksonChamutanga/Desktop/CLEM/IMG-20260719-WA0097.jpg" alt="Clemsole Product 2">
+                <div class="card-body">
+                    <h3>Product 2</h3>
+                    <p>Comfortable Slides</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="file:///C:/Users/HecksonChamutanga/Desktop/CLEM/IMG-20260719-WA0106.jpg" alt="Clemsole Product 3">
+                <div class="card-body">
+                    <h3>Product 3</h3>
+                    <p>Durable Boots</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="file:///C:/Users/HecksonChamutanga/Desktop/CLEM/IMG-20260719-WA0100.jpg" alt="Clemsole Product 4">
+                <div class="card-body">
+                    <h3>Product 4</h3>
+                    <p>Quality Casual Sneakers</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="file:///C:/Users/HecksonChamutanga/Desktop/CLEM/IMG-20260719-WA0111.jpg" alt="Clemsole Product 5">
+                <div class="card-body">
+                    <h3>Product 5</h3>
+                    <p>Different Types of Smart Shoes</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="file:///C:/Users/HecksonChamutanga/Desktop/CLEM/IMG-20260719-WA0098.jpg" alt="Clemsole Product 6">
+                <div class="card-body">
+                    <h3>Product 6</h3>
+                    <p>Strong and Durable Boots</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.ZWAZ6izMxk0UR6Zm2J20DQHaHa?r=0&pid=Api&h=220&P=0" alt="Clemsole Product 7">
+                <div class="card-body">
+                    <h3>Product 7</h3>
+                    <p>Comfortable Baby Shoes</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="product-info">
+
+            <div class="info-box">
+                <h3>Available Sizes</h3>
+                <p>Sizes 25–39 and 40–44</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Affordable Prices</h3>
+                <p>K180 – K350</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Order Today</h3>
+                <p>
+                    <a href="tel:+260961495456">
+                        Call: 0961 495 456
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="section-title">About Clemsole</h2>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+                <h3>Our Goal</h3>
+                <p>
+                    To give Zambians affordable and durable shoes
+                    and slippers for all genders.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To be Zambia's most trusted local footwear brand,
+                    known for comfort, quality and value.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TERMS -->
+    <section id="terms">
+
+        <h2 class="section-title">Terms & Conditions</h2>
+
+        <p>
+            By purchasing from <em>Clemsole Footwear</em>,
+            you agree to the following terms:
+        </p>
+
+        <br>
+
+        <ol class="terms-list">
+
+            <li>
+                <strong>A. Orders & Payments</strong>
+
+                <ul class="terms-sublist">
+                    <li>Payment methods: Cash, Mobile Money and Bank Transfer.</li>
+                    <li>Orders are confirmed once payment is received.</li>
+                    <li>All prices are in Zambian Kwacha (ZMW) and may change without notice.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>B. Delivery & Collection</strong>
+
+                <ul class="terms-sublist">
+                    <li>
+                        Collection point: Kyawama Market,
+                        along Independence Avenue, Solwezi.
+                    </li>
+                </ul>
+            </li>
+
+        </ol>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Us</h2>
+
+        <p class="section-intro">
+            Contact Clemsole Footwear to place an order,
+            ask about available sizes or learn more about our products.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+                <h3>Call Us</h3>
+
+                <p>
+                    <a href="tel:+260961495456">
+                        +260 961 495 456
+                    </a>
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <h3>WhatsApp</h3>
+
+                <a
+                    href="https://wa.me/260961495456?text=Hello%20Clemsole%20Footwear%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                    target="_blank"
+                    rel="noopener"
+                    class="whatsapp-contact-link"
+                >
+                    Chat with Us on WhatsApp
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Email Us</h3>
+
+                <p>
+                    <a href="mailto:info@clemsol.co.zm">
+                        info@clemsol.co.zm
+                    </a>
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Facebook</h3>
+
+                <p>
+                    <a
+                        href="https://www.facebook.com/profile.php?id=61591720002846"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Visit Our Facebook Page
+                    </a>
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Our Location</h3>
+
+                <p>
+                    Kyawama Market,<br>
+                    Along Independence Avenue,<br>
+                    Solwezi, Zambia
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a
+    href="https://wa.me/260961495456?text=Hello%20Clemsole%20Footwear%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+    target="_blank"
+    rel="noopener"
+    class="floating-whatsapp"
+    aria-label="Chat with Clemsole Footwear on WhatsApp"
+    title="Chat with us on WhatsApp"
+>
+    W
+</a>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        &copy; 2026 Clemsole Footwear.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Quality footwear proudly Zambian.
+    </p>
+
+    <p>
+        Step with confidence. Step with Clemsole.
+    </p>
+
+</footer>
+```
+
+</body>
+</html>
